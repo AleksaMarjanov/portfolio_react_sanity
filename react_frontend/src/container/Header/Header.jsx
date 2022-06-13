@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 
 import { images } from "../../constants";
 import "./Header.scss";
+import AppWrap from "./../../wrapper/AppWrap";
 
 const scaleVariants = {
   whileInView: {
@@ -17,7 +18,7 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    <div id="home" className="app__header app__flex">
+    <div className="app__header app__flex">
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
@@ -33,7 +34,7 @@ const Header = () => {
           </div>
 
           <div className="tag-cmp app__flex">
-            <p className="p-text">Front End Developer</p>
+            <p className="p-text">Web Developer</p>
             <p className="p-text">Web 3 Enthusiast</p>
           </div>
         </div>
@@ -68,4 +69,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default AppWrap(Header, "home");
