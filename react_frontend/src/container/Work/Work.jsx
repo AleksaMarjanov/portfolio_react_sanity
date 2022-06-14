@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import "./Work.scss";
 import AppWrap from "./../../wrapper/AppWrap";
 import { client, urlFor } from "./../../client";
+import MotionWrap from "./../../wrapper/MotionWrap";
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -20,7 +21,20 @@ const Work = () => {
     });
   }, []);
 
-  const handleWorkFilter = () => {};
+  const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimateCard([{ y: 100, opacity: 0 }]);
+
+    setTimeout(() => {
+      setAnimateCard([{ y: 0, opacity: 1 }]);
+
+      if (item === "All") {
+        setFilterWork(works);
+      } else {
+        setFilterWork(works.filter((work) => work.tags.includes(item)));
+      }
+    }, 500);
+  };
 
   return (
     <>
@@ -103,4 +117,8 @@ const Work = () => {
   );
 };
 
-export default AppWrap(Work, "work");
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
