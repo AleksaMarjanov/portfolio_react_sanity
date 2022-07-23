@@ -42,13 +42,13 @@ const Footer = () => {
 
   return (
     <>
-      <h2 className="head-text">Take a coffee & chat with me</h2>
+      <h2 className="head-text">Want me to build stuff for you?</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
           <img src={images.email} alt="email" />
           <a href="mailto:aleksamarjanovfreelance@gmail.com" className="p-text">
-            aleksamarjanovfreelance@gmail.com
+            aleksamarjanov@icloud.com
           </a>
         </div>
         <div className="app__footer-card">
