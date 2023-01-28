@@ -12,6 +12,7 @@ const AppWrap = (Component, idName, classNames) =>
           <div className="copyright">
             <p className="p-text">@{new Date().getFullYear()} Aleksa</p>
             <p className="p-text">All rights reserved</p>
+            <p className="p-text">Developed by <a href="https://marjanovdesignsolutions.com">Marjanov Design Solutions</a></p>
           </div>
         </div>
         <NavigationDots active={idName} />
